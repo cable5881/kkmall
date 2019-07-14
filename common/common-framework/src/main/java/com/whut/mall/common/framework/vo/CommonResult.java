@@ -1,11 +1,9 @@
-package cn.iocoder.common.framework.vo;
+package com.whut.mall.common.framework.vo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.util.Assert;
 
-import java.io.Serializable;
-
-public final class CommonResult<T> implements Serializable {
+public final class CommonResult<T> {
 
     public static Integer CODE_SUCCESS = 0;
 
@@ -16,7 +14,7 @@ public final class CommonResult<T> implements Serializable {
     /**
      * 错误提示
      */
-    private String message;
+    private String msg;
     /**
      * 返回数据
      */
@@ -32,14 +30,14 @@ public final class CommonResult<T> implements Serializable {
      * @return 新的 CommonResult 对象
      */
     public static <T> CommonResult<T> error(CommonResult<?> result) {
-        return error(result.getCode(), result.getMessage());
+        return error(result.getCode(), result.getMsg());
     }
 
     public static <T> CommonResult<T> error(Integer code, String message) {
         Assert.isTrue(!CODE_SUCCESS.equals(code), "code 必须是错误的！");
         CommonResult<T> result = new CommonResult<>();
         result.code = code;
-        result.message = message;
+        result.msg = message;
         return result;
     }
 
@@ -47,7 +45,7 @@ public final class CommonResult<T> implements Serializable {
         CommonResult<T> result = new CommonResult<>();
         result.code = CODE_SUCCESS;
         result.data = data;
-        result.message = "";
+        result.msg = "";
         return result;
     }
 
@@ -59,12 +57,12 @@ public final class CommonResult<T> implements Serializable {
         this.code = code;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public T getData() {
@@ -89,7 +87,7 @@ public final class CommonResult<T> implements Serializable {
     public String toString() {
         return "CommonResult{" +
                 "code=" + code +
-                ", message='" + message + '\'' +
+                ", msg='" + msg + '\'' +
                 ", data=" + data +
                 '}';
     }

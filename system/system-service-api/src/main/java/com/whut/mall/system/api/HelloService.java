@@ -1,4 +1,7 @@
 package com.whut.mall.system.api;
 
-public class HelloService {
+import com.whut.mall.system.api.bo.HelloBO;
+
+public interface HelloService {
+    HelloBO hello(String name);
 }

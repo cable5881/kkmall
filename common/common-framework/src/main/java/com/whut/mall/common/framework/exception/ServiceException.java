@@ -1,4 +1,4 @@
-package cn.iocoder.common.framework.exception;
+package com.whut.mall.common.framework.exception;
 
 /**
  * 服务异常

@@ -1,4 +1,4 @@
-package cn.iocoder.mall.spring.boot.swagger;
+package com.whut.mall.boot.swagger;
 
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;

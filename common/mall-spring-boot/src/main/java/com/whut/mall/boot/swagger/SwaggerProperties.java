@@ -1,4 +1,4 @@
-package cn.iocoder.mall.spring.boot.swagger;
+package com.whut.mall.boot.swagger;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

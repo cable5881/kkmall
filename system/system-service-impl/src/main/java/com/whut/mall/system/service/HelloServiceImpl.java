@@ -1,4 +1,4 @@
-package com.whut.mall.system.impl.service;
+package com.whut.mall.system.service;
 
 import com.whut.mall.system.api.HelloService;
 import com.whut.mall.system.api.bo.HelloBO;
